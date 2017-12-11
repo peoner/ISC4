@@ -1,0 +1,232 @@
+[   662.749] 
+X.Org X Server 1.19.5
+Release Date: 2017-10-12
+[   662.752] X Protocol Version 11, Revision 0
+[   662.753] Build Operating System: Linux 4.9.54-1-lts x86_64 
+[   662.754] Current Operating System: Linux Myhost 4.13.6-1-ARCH #1 SMP PREEMPT Thu Oct 12 12:42:27 CEST 2017 x86_64
+[   662.754] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=9fea48eb-76be-40d4-8072-907d621e9873 rw acpi_backlight=vendor quiet ro 3
+[   662.756] Build Date: 12 October 2017  09:59:53PM
+[   662.757]  
+[   662.757] Current version of pixman: 0.34.0
+[   662.759] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[   662.759] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[   662.763] (==) Log file: "/var/log/Xorg.0.log", Time: Tue Oct 17 11:58:57 2017
+[   662.875] (==) Using config directory: "/etc/X11/xorg.conf.d"
+[   662.877] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[   662.958] (==) No Layout section.  Using the first Screen section.
+[   662.958] (==) No screen section available. Using defaults.
+[   662.958] (**) |-->Screen "Default Screen Section" (0)
+[   662.958] (**) |   |-->Monitor "<default monitor>"
+[   662.958] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[   662.958] (==) Automatically adding devices
+[   662.958] (==) Automatically enabling devices
+[   662.958] (==) Automatically adding GPU devices
+[   662.958] (==) Automatically binding GPU devices
+[   662.977] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[   663.053] (WW) `fonts.dir' not found (or not valid) in "/usr/share/fonts/100dpi/".
+[   663.053] 	Entry deleted from font path.
+[   663.053] 	(Run 'mkfontdir' on "/usr/share/fonts/100dpi/").
+[   663.053] (WW) `fonts.dir' not found (or not valid) in "/usr/share/fonts/75dpi/".
+[   663.053] 	Entry deleted from font path.
+[   663.053] 	(Run 'mkfontdir' on "/usr/share/fonts/75dpi/").
+[   663.053] (==) FontPath set to:
+	/usr/share/fonts/misc/,
+	/usr/share/fonts/TTF/,
+	/usr/share/fonts/OTF/,
+	/usr/share/fonts/Type1/
+[   663.053] (==) ModulePath set to "/usr/lib/xorg/modules"
+[   663.053] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[   663.059] (II) Loader magic: 0x5576cae49d60
+[   663.059] (II) Module ABI versions:
+[   663.059] 	X.Org ANSI C Emulation: 0.4
+[   663.059] 	X.Org Video Driver: 23.0
+[   663.059] 	X.Org XInput driver : 24.1
+[   663.059] 	X.Org Server Extension : 10.0
+[   663.061] (--) using VT number 3
+
+[   663.061] (II) systemd-logind: logind integration requires -keeptty and -keeptty was not provided, disabling logind integration
+[   663.062] (II) xfree86: Adding drm device (/dev/dri/card1)
+[   663.062] (II) xfree86: Adding drm device (/dev/dri/card0)
+[   663.079] (--) PCI:*(0:0:2:0) 8086:0116:103c:185e rev 9, Mem @ 0xc0000000/4194304, 0xb0000000/268435456, I/O @ 0x00006000/64, BIOS @ 0x????????/131072
+[   663.079] (--) PCI: (0:1:0:0) 1002:6740:103c:185e rev 0, Mem @ 0xa0000000/268435456, 0xc6500000/131072, I/O @ 0x00005000/256, BIOS @ 0x????????/131072
+[   663.080] (WW) Open ACPI failed (/var/run/acpid.socket) (No such file or directory)
+[   663.080] (II) LoadModule: "glx"
+[   663.184] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[   663.264] (II) Module glx: vendor="X.Org Foundation"
+[   663.265] 	compiled for 1.19.5, module version = 1.0.0
+[   663.265] 	ABI class: X.Org Server Extension, version 10.0
+[   663.265] (==) Matched intel as autoconfigured driver 0
+[   663.265] (==) Matched ati as autoconfigured driver 1
+[   663.265] (==) Matched intel as autoconfigured driver 2
+[   663.265] (==) Matched modesetting as autoconfigured driver 3
+[   663.265] (==) Matched fbdev as autoconfigured driver 4
+[   663.265] (==) Matched vesa as autoconfigured driver 5
+[   663.265] (==) Assigned the driver to the xf86ConfigLayout
+[   663.265] (II) LoadModule: "intel"
+[   663.265] (WW) Warning, couldn't open module intel
+[   663.265] (II) UnloadModule: "intel"
+[   663.265] (II) Unloading intel
+[   663.265] (EE) Failed to load module "intel" (module does not exist, 0)
+[   663.265] (II) LoadModule: "ati"
+[   663.265] (WW) Warning, couldn't open module ati
+[   663.265] (II) UnloadModule: "ati"
+[   663.265] (II) Unloading ati
+[   663.265] (EE) Failed to load module "ati" (module does not exist, 0)
+[   663.265] (II) LoadModule: "modesetting"
+[   663.265] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[   663.279] (II) Module modesetting: vendor="X.Org Foundation"
+[   663.280] 	compiled for 1.19.5, module version = 1.19.5
+[   663.280] 	Module class: X.Org Video Driver
+[   663.280] 	ABI class: X.Org Video Driver, version 23.0
+[   663.280] (II) LoadModule: "fbdev"
+[   663.280] (WW) Warning, couldn't open module fbdev
+[   663.280] (II) UnloadModule: "fbdev"
+[   663.280] (II) Unloading fbdev
+[   663.280] (EE) Failed to load module "fbdev" (module does not exist, 0)
+[   663.280] (II) LoadModule: "vesa"
+[   663.280] (WW) Warning, couldn't open module vesa
+[   663.280] (II) UnloadModule: "vesa"
+[   663.280] (II) Unloading vesa
+[   663.280] (EE) Failed to load module "vesa" (module does not exist, 0)
+[   663.280] (II) modesetting: Driver for Modesetting Kernel Drivers: kms
+[   663.310] (II) modeset(0): using drv /dev/dri/card0
+[   663.310] (II) modeset(G0): using drv /dev/dri/card1
+[   663.310] (II) modeset(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[   663.310] (==) modeset(0): Depth 24, (==) framebuffer bpp 32
+[   663.310] (==) modeset(0): RGB weight 888
+[   663.310] (==) modeset(0): Default visual is TrueColor
+[   663.310] (II) Loading sub module "glamoregl"
+[   663.310] (II) LoadModule: "glamoregl"
+[   663.310] (II) Loading /usr/lib/xorg/modules/libglamoregl.so
+[   663.392] (II) Module glamoregl: vendor="X.Org Foundation"
+[   663.392] 	compiled for 1.19.5, module version = 1.0.0
+[   663.392] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[   663.392] (II) glamor: OpenGL accelerated X.org driver based.
+[   663.763] (II) glamor: EGL version 1.4 (DRI2):
+[   663.871] (II) modeset(0): glamor initialized
+[   663.871] (II) modeset(0): Output LVDS-1 has no monitor section
+[   663.876] (II) modeset(0): Output VGA-1 has no monitor section
+[   663.885] (II) modeset(0): Output HDMI-1 has no monitor section
+[   663.885] (II) modeset(0): Output DP-1 has no monitor section
+[   663.885] (II) modeset(0): EDID for output LVDS-1
+[   663.885] (II) modeset(0): Manufacturer: CMO  Model: 15a2  Serial#: 0
+[   663.885] (II) modeset(0): Year: 2009  Week: 53
+[   663.885] (II) modeset(0): EDID Version: 1.3
+[   663.885] (II) modeset(0): Digital Display Input
+[   663.885] (II) modeset(0): Max Image Size [cm]: horiz.: 35  vert.: 19
+[   663.885] (II) modeset(0): Gamma: 2.20
+[   663.885] (II) modeset(0): No DPMS capabilities specified
+[   663.885] (II) modeset(0): Supported color encodings: RGB 4:4:4 YCrCb 4:4:4 
+[   663.885] (II) modeset(0): First detailed timing is preferred mode
+[   663.885] (II) modeset(0): redX: 0.602 redY: 0.340   greenX: 0.306 greenY: 0.530
+[   663.885] (II) modeset(0): blueX: 0.151 blueY: 0.120   whiteX: 0.313 whiteY: 0.329
+[   663.885] (II) modeset(0): Manufacturer's mask: 0
+[   663.885] (II) modeset(0): Supported detailed timing:
+[   663.885] (II) modeset(0): clock: 69.3 MHz   Image Size:  344 x 193 mm
+[   663.885] (II) modeset(0): h_active: 1366  h_sync: 1382  h_sync_end 1416 h_blank_end 1466 h_border: 0
+[   663.885] (II) modeset(0): v_active: 768  v_sync: 770  v_sync_end 776 v_blanking: 788 v_border: 0
+[   663.885] (II) modeset(0):  N156B6-L0B
+[   663.885] (II) modeset(0):  CMO
+[   663.885] (II) modeset(0):  N156B6-L0B
+[   663.885] (II) modeset(0): EDID (in hex):
+[   663.885] (II) modeset(0): 	00ffffffffffff000dafa21500000000
+[   663.885] (II) modeset(0): 	35130103802313780a07f59a574e8726
+[   663.885] (II) modeset(0): 	1e505400000001010101010101010101
+[   663.885] (II) modeset(0): 	010101010101121b5664500014301022
+[   663.885] (II) modeset(0): 	260058c110000018000000fe004e3135
+[   663.885] (II) modeset(0): 	3642362d4c30420a2020000000fe0043
+[   663.885] (II) modeset(0): 	4d4f0a202020202020202020000000fe
+[   663.885] (II) modeset(0): 	004e31353642362d4c30420a20200010
+[   663.885] (II) modeset(0): Printing probed modes for output LVDS-1
+[   663.885] (II) modeset(0): Modeline "1366x768"x60.0   69.30  1366 1382 1416 1466  768 770 776 788 -hsync -vsync (47.3 kHz eP)
+[   663.885] (II) modeset(0): Modeline "1024x768"x120.1  133.47  1024 1100 1212 1400  768 768 770 794 doublescan -hsync +vsync (95.3 kHz d)
+[   663.885] (II) modeset(0): Modeline "1024x768"x60.0   65.00  1024 1048 1184 1344  768 771 777 806 -hsync -vsync (48.4 kHz d)
+[   663.885] (II) modeset(0): Modeline "960x720"x120.0  117.00  960 1024 1128 1300  720 720 722 750 doublescan -hsync +vsync (90.0 kHz d)
+[   663.885] (II) modeset(0): Modeline "928x696"x120.1  109.15  928 976 1088 1264  696 696 698 719 doublescan -hsync +vsync (86.4 kHz d)
+[   663.885] (II) modeset(0): Modeline "896x672"x120.0  102.40  896 960 1060 1224  672 672 674 697 doublescan -hsync +vsync (83.7 kHz d)
+[   663.885] (II) modeset(0): Modeline "800x600"x120.0   81.00  800 832 928 1080  600 600 602 625 doublescan +hsync +vsync (75.0 kHz d)
+[   663.885] (II) modeset(0): Modeline "800x600"x60.3   40.00  800 840 968 1056  600 601 605 628 +hsync +vsync (37.9 kHz d)
+[   663.885] (II) modeset(0): Modeline "800x600"x56.2   36.00  800 824 896 1024  600 601 603 625 +hsync +vsync (35.2 kHz d)
+[   663.885] (II) modeset(0): Modeline "700x525"x120.0   61.00  700 744 820 940  525 526 532 541 doublescan +hsync +vsync (64.9 kHz d)
+[   663.885] (II) modeset(0): Modeline "640x512"x120.0   54.00  640 664 720 844  512 512 514 533 doublescan +hsync +vsync (64.0 kHz d)
+[   663.885] (II) modeset(0): Modeline "640x480"x120.0   54.00  640 688 744 900  480 480 482 500 doublescan +hsync +vsync (60.0 kHz d)
+[   663.885] (II) modeset(0): Modeline "640x480"x59.9   25.18  640 656 752 800  480 490 492 525 -hsync -vsync (31.5 kHz d)
+[   663.885] (II) modeset(0): Modeline "512x384"x120.0   32.50  512 524 592 672  384 385 388 403 doublescan -hsync -vsync (48.4 kHz d)
+[   663.885] (II) modeset(0): Modeline "400x300"x120.6   20.00  400 420 484 528  300 300 302 314 doublescan +hsync +vsync (37.9 kHz d)
+[   663.885] (II) modeset(0): Modeline "400x300"x112.7   18.00  400 412 448 512  300 300 301 312 doublescan +hsync +vsync (35.2 kHz d)
+[   663.885] (II) modeset(0): Modeline "320x240"x120.1   12.59  320 328 376 400  240 245 246 262 doublescan -hsync -vsync (31.5 kHz d)
+[   663.890] (II) modeset(0): EDID for output VGA-1
+[   663.899] (II) modeset(0): EDID for output HDMI-1
+[   663.899] (II) modeset(0): EDID for output DP-1
+[   663.899] (II) modeset(0): Output LVDS-1 connected
+[   663.899] (II) modeset(0): Output VGA-1 disconnected
+[   663.899] (II) modeset(0): Output HDMI-1 disconnected
+[   663.899] (II) modeset(0): Output DP-1 disconnected
+[   663.899] (II) modeset(0): Using exact sizes for initial modes
+[   663.899] (II) modeset(0): Output LVDS-1 using initial mode 1366x768 +0+0
+[   663.899] (==) modeset(0): Using gamma correction (1.0, 1.0, 1.0)
+[   663.899] (==) modeset(0): DPI set to (96, 96)
+[   663.899] (II) Loading sub module "fb"
+[   663.899] (II) LoadModule: "fb"
+[   663.899] (II) Loading /usr/lib/xorg/modules/libfb.so
+[   663.908] (II) Module fb: vendor="X.Org Foundation"
+[   663.908] 	compiled for 1.19.5, module version = 1.0.0
+[   663.908] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[   663.908] (==) modeset(G0): Depth 24, (==) framebuffer bpp 32
+[   663.908] (==) modeset(G0): RGB weight 888
+[   663.908] (==) modeset(G0): Default visual is TrueColor
+[   663.908] (II) Loading sub module "glamoregl"
+[   663.908] (II) LoadModule: "glamoregl"
+[   663.908] (II) Loading /usr/lib/xorg/modules/libglamoregl.so
+[   663.908] (II) Module glamoregl: vendor="X.Org Foundation"
+[   663.908] 	compiled for 1.19.5, module version = 1.0.0
+[   663.908] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[   663.908] (II) glamor: OpenGL accelerated X.org driver based.
+[   665.426] (II) glamor: EGL version 1.5 (DRI2):
+[   665.471] (II) modeset(G0): glamor initialized
+[   665.472] (==) modeset(G0): Using gamma correction (1.0, 1.0, 1.0)
+[   665.472] (==) modeset(G0): DPI set to (96, 96)
+[   665.472] (II) Loading sub module "fb"
+[   665.472] (II) LoadModule: "fb"
+[   665.472] (II) Loading /usr/lib/xorg/modules/libfb.so
+[   665.472] (II) Module fb: vendor="X.Org Foundation"
+[   665.472] 	compiled for 1.19.5, module version = 1.0.0
+[   665.472] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[   665.472] (==) Depth 24 pixmap format is 32 bpp
+[   665.712] (==) modeset(G0): Backing store enabled
+[   665.712] (==) modeset(G0): Silken mouse enabled
+[   665.741] (II) modeset(G0): RandR 1.2 enabled, ignore the following RandR disabled message.
+[   665.749] (==) modeset(G0): DPMS enabled
+[   665.749] (II) modeset(G0): [DRI2] Setup complete
+[   665.749] (II) modeset(G0): [DRI2]   DRI driver: r600
+[   665.749] (II) modeset(G0): [DRI2]   VDPAU driver: r600
+[   665.900] (==) modeset(0): Backing store enabled
+[   665.900] (==) modeset(0): Silken mouse enabled
+[   665.900] (II) modeset(0): RandR 1.2 enabled, ignore the following RandR disabled message.
+[   665.933] (==) modeset(0): DPMS enabled
+[   665.933] (II) modeset(0): [DRI2] Setup complete
+[   665.933] (II) modeset(0): [DRI2]   DRI driver: i965
+[   665.933] (II) modeset(0): [DRI2]   VDPAU driver: i965
+[   665.933] (--) RandR disabled
+[   665.956] (II) AIGLX: enabled GLX_MESA_copy_sub_buffer
+[   665.956] (II) AIGLX: enabled GLX_ARB_create_context
+[   665.956] (II) AIGLX: enabled GLX_ARB_create_context_profile
+[   665.956] (II) AIGLX: enabled GLX_EXT_create_context_es{,2}_profile
+[   665.956] (II) AIGLX: enabled GLX_INTEL_swap_event
+[   665.956] (II) AIGLX: enabled GLX_SGI_swap_control
+[   665.956] (II) AIGLX: enabled GLX_EXT_framebuffer_sRGB
+[   665.956] (II) AIGLX: enabled GLX_ARB_fbconfig_float
+[   665.956] (II) AIGLX: enabled GLX_EXT_fbconfig_packed_float
+[   665.956] (II) AIGLX: GLX_EXT_texture_from_pixmap backed by buffer objects
+[   665.956] (II) AIGLX: enabled GLX_ARB_create_context_robustness
+[   665.956] (II) AIGLX: Loaded and initialized i965
+[   665.956] (II) GLX: Initialized DRI2 GL provider for screen 0
+[   666.043] (II) modeset(G0): Damage tracking initialized
+[   666.093] (II) modeset(0): Damage tracking initialized
+[   666.093] (II) modeset(0): Setting screen physical size to 361 x 203
