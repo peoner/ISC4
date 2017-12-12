@@ -18,7 +18,7 @@ void KB_ISR(void) __interrupt(4) {
     int row = kb_tick & 3;
     unsigned int buff;
     if(row == 0){
-        kb_col_row = read_max();
+        kb_col_row = read_max(KB);
     }
      buff = kb_rows[row];
      buff += row_tick;
