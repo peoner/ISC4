@@ -20,7 +20,7 @@ void KB_ISR(void) __interrupt(4) {
     if(row == 0){
         kb_col_row = read_max();
     }
-    unsigned int buff = kb_rows[row];
+     buff = kb_rows[row];
      buff += row_tick;
      buff &=  row_clean[
         ((kb_col_row >> (row + 4)) & 1) *
@@ -48,5 +48,4 @@ void init_kb(){
 	EA = 1;
 	//start Timer0
     SetVector(0x200B, (void *)KB_ISR);
-
 }
