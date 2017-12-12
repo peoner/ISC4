@@ -24,7 +24,7 @@ void KB_ISR(void) __interrupt(4) {
 
      buff = kb_rows[row];
      buff += row_tick;
-     buff &=  row_clean[( (kb_col_row >> 4) & 15)];
+     buff &=  row_clean[( ~(kb_col_row >> 4) & 15)];
 
     if(kb_tick>64){
         buff &= 0x7f7f7f7f;     //00->00;01->10;10->00;11->10
