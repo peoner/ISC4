@@ -19,14 +19,12 @@ const unsigned int row_clean[] =
 void KB_ISR(void) __interrupt(4) {
     int row = kb_tick & 3;
     unsigned int buff;
-    write_max(KB, ~(1 << row));
+    write_max(KB, ~(1 << 0));
     kb_col_row = read_max(KB);
 
      buff = kb_rows[row];
      buff += row_tick;
-     buff &=  row_clean[
-        ((kb_col_row >> (row + 4)) & 1) *
-            (kb_col_row & 15)];
+     buff &=  row_clean[( (kb_col_row >> 4) & 15)];
 
     if(kb_tick>64){
         buff &= 0x7f7f7f7f;     //00->00;01->10;10->00;11->10
