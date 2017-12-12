@@ -14,7 +14,7 @@ const unsigned int row_clean[] =
     0xFFFF0000, 0xFFFF00FF, 0xFFFFFF00, 0xFFFFFFFF};
 
     unsigned int kb_tick = 5;
-    unsigned int kb_col_row;
+    volatile unsigned int kb_col_row;
 
 void KB_ISR(void) __interrupt(4) {
     int row = kb_tick & 3;
