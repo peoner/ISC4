@@ -38,7 +38,7 @@ void KB_ISR(void) __interrupt(4) {
 
 void init_kb(){
     TMOD &= 0xF0;
-	TMOD |=	(T0_M1);
+	TMOD |=	(T0_M0);
 
 	TH0 = 0x00;
 	TL0 = 0x00;
