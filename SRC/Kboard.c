@@ -13,7 +13,7 @@ const unsigned int row_clean[] =
     0xFF000000, 0xFF0000FF, 0xFF00FF00, 0xFF00FFFF,
     0xFFFF0000, 0xFFFF00FF, 0xFFFFFF00, 0xFFFFFFFF};
 
-    unsigned int kb_tick = 5;
+    unsigned int kb_tick = 0;
     unsigned int kb_col_row = 0;
 
 void KB_ISR(void) __interrupt(4) {
@@ -21,20 +21,19 @@ void KB_ISR(void) __interrupt(4) {
     unsigned int buff;
     write_max(KB, ~(1 << row));
     kb_col_row = read_max(KB);
-    if(row == 0){
-        row_clean[0] | kb_col_row;
-    }
-    WriteLED(kb_col_row);
+
      buff = kb_rows[row];
      buff += row_tick;
      buff &=  row_clean[
         ((kb_col_row >> (row + 4)) & 1) *
             (kb_col_row & 15)];
+
     if(kb_tick>64){
         buff &= 0x7f7f7f7f;     //00->00;01->10;10->00;11->10
         buff += magic_numb;
         buff &= 0xbfbfbfbf;
     }
+    WriteLED(kb_rows[0]);
     kb_rows[row] = buff;
     kb_tick ++;
 }
@@ -43,8 +42,8 @@ void init_kb(){
     TMOD &= 0xF0;
 	TMOD |=	(T0_M1);
 
-	TH0 = 0x50;
-	TL0 = 0x50;
+	TH0 = 0x00;
+	TL0 = 0x00;
 
     TR0 = 1;
 	ET0 = 1;
