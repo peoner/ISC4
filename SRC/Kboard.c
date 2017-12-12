@@ -5,7 +5,7 @@
 #define row_tick 0x01010101
 #define magic_numb 0x40404040
 
-volatile unsigned int kb_rows[4] = {0,0,0,0};
+unsigned int kb_rows[4] = {0,0,0,0};
 
 const unsigned int row_clean[] =
     {0, 0xFF, 0xFF00, 0xFFFF,
@@ -22,6 +22,7 @@ void KB_ISR(void) __interrupt(4) {
     if(row == 0){
         kb_col_row = read_max(KB);
     }
+
      buff = kb_rows[row];
      buff += row_tick;
      buff &=  row_clean[

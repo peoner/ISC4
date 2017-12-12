@@ -107,19 +107,19 @@ void main(void) {
     init_kb();
 	while (1) {
 		if (GetDIP() == 1) {
-			WriteLED(kb_rows[0]);
+			WriteLED(kb_col_row);
 		}
 
         if (GetDIP() == 2) {
-			WriteLED(kb_rows[1]);
+			WriteLED(kb_col_row);
 		}
 
         if (GetDIP() == 3) {
-			WriteLED(kb_rows[2]);
+			WriteLED(kb_col_row);
 		}
 
         if (GetDIP() == 4) {
-			WriteLED(kb_rows[3]);
+			WriteLED(kb_col_row);
 		}
 	}
 }
