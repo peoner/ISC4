@@ -5,6 +5,8 @@
 #define row_tick 0x01010101
 #define magic_numb 0x40404040
 
+volatile unsigned int kb_rows[4] = {0,0,0,0};
+
 const unsigned int row_clean[] =
     {0, 0xFF, 0xFF00, 0xFFFF,
     0xFF0000, 0xFF00FF, 0xFFFF00, 0xFFFFFF,

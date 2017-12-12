@@ -1,6 +1,7 @@
 #include "common.h"
 #include "aduc812.h"
 
+
 void SetVector(unsigned char __xdata * Addres, void * Vector) {
 	unsigned char __xdata * TmpVector;
 	TmpVector = Addres;
