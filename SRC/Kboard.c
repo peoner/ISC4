@@ -19,7 +19,7 @@ const unsigned int row_clean[] =
 void KB_ISR(void) __interrupt(4) {
         int row = kb_tick & 3;
     unsigned int buff;
-write_max(KB, 0x0F);
+write_max(KB, 0x01);
     if(row == 0){
         kb_col_row = read_max(KB);
     }
