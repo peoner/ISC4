@@ -3,79 +3,73 @@ Hexadecimal
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-RSEG1                              0000   0000 =      0. bytes (ABS,CON)
+CABS                               0000   0000 =      0. bytes (ABS,CON,CODE)
 
       Value  Global
    --------  --------------------------------
-     0000    l_CABS
-     0000    l_GSINIT1
-     0000    l_GSINIT5
-     0000    l_IABS
-     0000    l_ISEG
-     0000    l_OSEG
-     0000    l_PSEG
-     0000    l_REG_BANK_1
-     0000    l_REG_BANK_2
-     0000    l_REG_BANK_3
-     0000    l_RSEG
-     0000    l_RSEG0
-     0000    l_RSEG1
-     0000    l_XABS
-     0000    l_XINIT
-     0000    l_XISEG
-     0000    l_XSEG
-     0000    l__CODE
-     0000    s_BSEG
-     0000    s_CABS
-     0000    s_DSEG
-     0000    s_IABS
-     0000    s_ISEG
-     0000    s_REG_BANK_0
-     0000    s_RSEG0
-     0000    s_RSEG1
-     0000    s_XABS
-     0001    l_BIT_BANK
-     0001    l_BSEG_BYTES
-     0002    l_BSEG
-     0003    l_GSFINAL
-     0003    l_GSINIT0
-     0008    l_REG_BANK_0
-     0008    s_REG_BANK_1
-     000A    l_GSINIT2
-     000D    l_GSINIT
-     0010    s_REG_BANK_2
-     0018    s_REG_BANK_3
-     0020    s_BSEG_BYTES
-     0020    s__CODE
-     0021    s_BIT_BANK
-     0021    s_OSEG
-     0022    l_GSINIT3
-     002A    l_GSINIT4
-     002B    l_HOME
-     003C    l_CONST
-     0046    s_RSEG
-     0046    s_SSEG
-     0071    l_DSEG
-     00BA    l_SSEG
-     0100    l_IRAM
-     05D0    l_CSEG
-     2100    s_HOME
-     212B    s_GSINIT0
-     212E    s_GSINIT1
-     212E    s_GSINIT2
-     2138    s_GSINIT3
-     215A    s_GSINIT4
-     2184    s_GSINIT
-     2184    s_GSINIT5
-     2191    s_GSFINAL
-     2194    s_CSEG
-     2764    s_CONST
-     27A0    s_XINIT
-     6000    s_PSEG
-     6000    s_XISEG
-     6000    s_XSEG
-
-
+  0C:0000    l_CABS
+  0C:0000    l_GSINIT1
+  0C:0000    l_GSINIT5
+  0C:0000    l_IABS
+  0C:0000    l_ISEG
+  0C:0000    l_OSEG
+  0C:0000    l_PSEG
+  0C:0000    l_REG_BANK_1
+  0C:0000    l_REG_BANK_2
+  0C:0000    l_REG_BANK_3
+  0C:0000    l_RSEG
+  0C:0000    l_XABS
+  0C:0000    l_XINIT
+  0C:0000    l_XISEG
+  0C:0000    l_XSEG
+  0C:0000    l__CODE
+  0C:0000    s_BSEG
+  0C:0000    s_CABS
+  0C:0000    s_DSEG
+  0C:0000    s_IABS
+  0C:0000    s_ISEG
+  0C:0000    s_REG_BANK_0
+  0C:0000    s_XABS
+  0C:0001    l_BIT_BANK
+  0C:0001    l_BSEG_BYTES
+  0C:0002    l_BSEG
+  0C:0003    l_GSFINAL
+  0C:0003    l_GSINIT0
+  0C:0008    l_REG_BANK_0
+  0C:0008    s_REG_BANK_1
+  0C:000A    l_GSINIT2
+  0C:0010    s_REG_BANK_2
+  0C:0018    s_REG_BANK_3
+  0C:0020    s_BSEG_BYTES
+  0C:0020    s__CODE
+  0C:0021    s_BIT_BANK
+  0C:0021    s_OSEG
+  0C:0022    l_GSINIT3
+  0C:002A    l_GSINIT4
+  0C:002B    l_HOME
+  0C:0030    l_GSINIT
+  0C:0046    s_RSEG
+  0C:0046    s_SSEG
+  0C:005C    l_CONST
+  0C:0079    l_DSEG
+  0C:00BA    l_SSEG
+  0C:0100    l_IRAM
+  0C:0667    l_CSEG
+  0C:2100    s_HOME
+  0C:212B    s_GSINIT0
+  0C:212E    s_GSINIT1
+  0C:212E    s_GSINIT2
+  0C:2138    s_GSINIT3
+  0C:215A    s_GSINIT4
+  0C:2184    s_GSINIT
+  0C:2184    s_GSINIT5
+  0C:21B4    s_GSFINAL
+  0C:21B7    s_CSEG
+  0C:281E    s_CONST
+  0C:287A    s_XINIT
+  0C:6000    s_PSEG
+  0C:6000    s_XISEG
+  0C:6000    s_XSEG
 
 
 
@@ -87,7 +81,6 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
 
       Value  Global
    --------  --------------------------------
-     0000    .__.ABS.
      0080    _P0
      0081    _SP
      0082    _DPL
@@ -265,15 +258,17 @@ Hexadecimal
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-DSEG                               0000   0071 =    113. bytes (REL,CON)
+DSEG                               0000   0079 =    121. bytes (REL,CON)
 
       Value  Global
    --------  --------------------------------
-     0008    _ms_counter
-     000C    _vall
-     000E    _c
-     000F    _status
-     0010    _bp
+     0008    _kb_rows
+     0010    _kb_tick
+     0012    _kb_col_row
+     0014    _vall
+     0016    _c
+     0017    _status
+     0018    _bp
      0022    _wFIFO
      0034    _rFIFO
 
@@ -343,40 +338,46 @@ Hexadecimal
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-CSEG                               2194   05D0 =   1488. bytes (REL,CON,CODE)
+CSEG                               21B7   0667 =   1639. bytes (REL,CON,CODE)
 
       Value  Global
    --------  --------------------------------
-  0C:2194    _init_sio
-  0C:21C9    _PushFIFO
-  0C:22A1    _PopFIFO
-  0C:232E    _SIO_ISR
-  0C:2397    _WriteUART
-  0C:23B9    _PrintString
-  0C:23E4    _ReadUART
-  0C:23F2    _rsiostat
-  0C:23F9    _wsio
-  0C:2402    _rsio
-  0C:2415    _T2_cnt
-  0C:2432    _InitTimer
-  0C:2469    _GetMsCounter
-  0C:2475    _DTimeMs
-  0C:2493    _DelayMs
-  0C:24BA    _SetVector
-  0C:24F2    _WriteLED
-  0C:24FF    _GetDIP
-  0C:250B    _write_max
-  0C:2521    _read_max
-  0C:252D    _TypeParser
-  0C:2547    _SequenceWriter
-  0C:2598    _Converter
-  0C:26CD    _main
-  0C:2709    __gptrput
-  0C:2722    __mulint
-  0C:2722    __mulint_dummy
-  0C:2744    __gptrget
-  0C:2760    __sdcc_external_startup
+  0C:21B7    _init_sio
+  0C:21EC    _PushFIFO
+  0C:22C4    _PopFIFO
+  0C:2351    _SIO_ISR
+  0C:23BA    _WriteUART
+  0C:23DC    _PrintString
+  0C:2407    _ReadUART
+  0C:2415    _rsiostat
+  0C:241C    _wsio
+  0C:2425    _rsio
+  0C:2438    _SetVector
+  0C:2470    _WriteLED
+  0C:247D    _GetDIP
+  0C:2489    _write_max
+  0C:249F    _read_max
+  0C:24AB    _KB_ISR
+  0C:25F3    _init_kb
+  0C:261E    _TypeParser
+  0C:2638    _SequenceWriter
+  0C:2689    _Converter
+  0C:27BE    _main
+  0C:27C3    __gptrput
+  0C:27DC    __mulint
+  0C:27DC    __mulint_dummy
+  0C:27FE    __gptrget
+  0C:281A    __sdcc_external_startup
 
+Hexadecimal
+
+Area                               Addr   Size   Decimal Bytes (Attributes)
+--------------------------------   ----   ----   ------- ----- ------------
+CONST                              281E   005C =     92. bytes (REL,CON,CODE)
+
+      Value  Global
+   --------  --------------------------------
+  0C:281E    _row_clean
 
 ASxxxx Linker V01.75 + NoICE + SDCC Feb 1999,  page 1.
 
@@ -384,22 +385,22 @@ Files Linked      [ module(s) ]
 
 SRC/async.rel   
 SRC/sync.rel    
-SRC/timer.rel   
 SRC/common.rel  
+SRC/Kboard.rel  
 SRC/main.rel    
 
 Libraries Linked            [   object  file   ]
 
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/mcs51.lib    [     crtclear.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/mcs51.lib    [     crtxinit.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/libsdcc.lib    [     _gptrput.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/libint.lib    [      _mulint.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/mcs51.lib    [    crtxclear.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/libsdcc.lib    [          _bp.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/mcs51.lib    [   crtpagesfr.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/mcs51.lib    [     crtstart.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/libsdcc.lib    [     _gptrget.rel ]
-/home/archu/Documents/sdcc/bin//../share/sdcc/lib/small-stack-auto/libsdcc.lib    [     _startup.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/mcs51.lib    [     crtclear.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/mcs51.lib    [     crtxinit.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/libsdcc.lib    [     _gptrput.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/libint.lib    [      _mulint.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/mcs51.lib    [    crtxclear.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/libsdcc.lib    [          _bp.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/mcs51.lib    [   crtpagesfr.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/mcs51.lib    [     crtstart.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/libsdcc.lib    [     _gptrget.rel ]
+/home/archu/Documents/sdcc/bin/../share/sdcc/lib/small-stack-auto/libsdcc.lib    [     _startup.rel ]
 
 ASxxxx Linker V01.75 + NoICE + SDCC Feb 1999,  page 2.
 
