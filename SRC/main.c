@@ -3,6 +3,7 @@
 #include "sio.h"
 #include "sync.h"
 #include "common.h"
+##include "Kboard.h"
 
 #define No_data 0
 #define Is_a_number 1
@@ -102,22 +103,23 @@ void Converter(){
 
 void main(void) {
 
-	init_sio(S1200);
-
+	//init_sio(S1200);
+    init_kb();
 	while (1) {
-		if (GetDIP() != 128) {
-			ES = 0;
-			EA = 0;
-			while (GetDIP() != 128) {
-				SequenceWriter();
-			}
-		}else{
-			ES = 1;
-			EA = 1;
-			while (GetDIP() == 128) {
-				Converter();
-			}
-			WriteLED(0);
-        }
+		if (GetDIP() == 1) {
+			WriteLED(kb_rows[0]);
+		}
+
+        if (GetDIP() == 2) {
+			WriteLED(kb_rows[1]);
+		}
+
+        if (GetDIP() == 3) {
+			WriteLED(kb_rows[2]);
+		}
+
+        if (GetDIP() == 4) {
+			WriteLED(kb_rows[3]);
+		}
 	}
 }

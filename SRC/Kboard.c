@@ -1,10 +1,6 @@
 #include "Kboard.h"
 #include "common.h"
 
-void init_kb(){
-
-}
-
 #define row_tick 0x01010101
 #define magic_numb 0x40404040
 
@@ -17,7 +13,7 @@ const unsigned int row_clean[] =
     unsigned int kb_tick = 5;
     unsigned int kb_col_row;
 
-void SIO_ISR(void) __interrupt(4) {
+void KB_ISR(void) __interrupt(4) {
     int row = kb_tick & 3;
     if(row == 0){
         kb_col_row = read_max();
@@ -35,4 +31,20 @@ void SIO_ISR(void) __interrupt(4) {
     }
     kb_rows[row] = buff;
     kb_tick ++;
+}
+
+void init_kb(){
+    TMOD &= 0xF0;
+	TMOD |=	(T0_M1);
+
+	TH0 = 0x50;
+	TL0 = 0x50;
+
+    TR0 = 1;
+	ET0 = 1;
+	//Enable all
+	EA = 1;
+	//start Timer0
+    SetVector(0x200B, (void *)KB_ISR);
+
 }
