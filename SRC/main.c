@@ -106,8 +106,8 @@ void main(void) {
 	//init_sio(S1200);
     init_kb();
 	while (1) {
-		if (GetDIP() == 1) {
-			WriteLED(kb_col_row);
+		/*if (GetDIP() == 1) {
+			WriteLED(kb_rows[1]);
 		}
 
         if (GetDIP() == 2) {
@@ -120,6 +120,6 @@ void main(void) {
 
         if (GetDIP() == 4) {
 			WriteLED(kb_col_row);
-		}
+		}*/
 	}
 }

@@ -23,7 +23,7 @@ write_max(KB, 0);
     if(row == 0){
         kb_col_row = read_max(KB);
     }
-
+WriteLED(kb_col_row);
      buff = kb_rows[row];
      buff += row_tick;
      buff &=  row_clean[
