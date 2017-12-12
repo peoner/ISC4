@@ -70,7 +70,6 @@ term:
 LIST_SRC = \
 $(SRC_DIR)/async.c \
 $(SRC_DIR)/sync.c \
-$(SRC_DIR)/timer.c \
 $(SRC_DIR)/common.c \
 $(SRC_DIR)/Kboard.c \
 $(SRC_DIR)/main.c
