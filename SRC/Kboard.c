@@ -17,19 +17,19 @@ const unsigned int row_clean[] =
     unsigned int kb_col_row = 0;
 
 void KB_ISR(void) __interrupt(4) {
-        int row = kb_tick & 3;
+    int row = kb_tick & 3;
     unsigned int buff;
-write_max(KB, 0x01);
+    write_max(KB, ~(1 << row));
+    kb_col_row = read_max(KB);
     if(row == 0){
-        kb_col_row = read_max(KB);
+        row_clean[0] | kb_col_row;
     }
-WriteLED(kb_col_row);
+    WriteLED(kb_col_row);
      buff = kb_rows[row];
      buff += row_tick;
      buff &=  row_clean[
         ((kb_col_row >> (row + 4)) & 1) *
             (kb_col_row & 15)];
-
     if(kb_tick>64){
         buff &= 0x7f7f7f7f;     //00->00;01->10;10->00;11->10
         buff += magic_numb;
