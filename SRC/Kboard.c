@@ -1,5 +1,6 @@
 #include "Kboard.h"
 #include "common.h"
+#include "aduc812.h"
 
 #define row_tick 0x01010101
 #define magic_numb 0x40404040
