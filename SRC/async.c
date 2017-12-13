@@ -1,15 +1,9 @@
 #include "aduc812.h"
 #include "common.h"
+#include "async.h"
 
-#define FIFOSize 16
 
-void SIO_ISR(void) __interrupt(4);
 
-struct FIFOb {
-	unsigned char buf[FIFOSize];
-	char RP;
-	char WP;
-};
 
 struct FIFOb wFIFO, rFIFO;
 __bit TRANSFER_NOW; //Флаг для разрешения проблемы начальной передачи
@@ -32,7 +26,7 @@ void init_sio(unsigned char speed) {
 
 //Функция записи элемента в буфер
 __bit PushFIFO(struct FIFOb *a, unsigned char c) {
-	if (!((a->RP == 0 && a->WP == FIFOSize - 1) || //если буфер не полон
+	if (!((a->RP == 0 && a->WP == FIFOSize - 1) ||
 	      ((a->RP - a->WP) == 1))) 	{
 		a->buf[a->WP] = c;
 		if (++(a->WP) > FIFOSize - 1)

@@ -4,11 +4,13 @@
 
 void SIO_ISR( void ) __interrupt ( 4 );
 
-//struct FIFOb{
-//	unsigned char buf[FIFOSize];
-//	char RP;
-//	char WP;
-//};
+#define FIFOSize 16
+
+struct FIFOb{
+	unsigned char buf[FIFOSize];
+	char RP;
+	char WP;
+};
 
 //struct FIFOb wFIFO, rFIFO;
 //__bit TRANSFER_NOW;				//Флаг для разрешения проблемы начальной передачи

@@ -102,24 +102,19 @@ void Converter(){
 
 
 void main(void) {
-
+    char symb =0;
 	//init_sio(S1200);
-    init_kb();
+    init_sio(S9600);
+    init_kb(247, 128+6);
 	while (1) {
-		/*if (GetDIP() == 1) {
-			WriteLED(kb_rows[1]);
-		}
+        if(GetDIP() == 1){
+            symb = ReadKB();
+            if(symb != 0){
+                WriteUART(symb);
+            }
+        }else{
 
-        if (GetDIP() == 2) {
-			WriteLED(kb_col_row);
-		}
+        }
 
-        if (GetDIP() == 3) {
-			WriteLED(kb_col_row);
-		}
-
-        if (GetDIP() == 4) {
-			WriteLED(kb_col_row);
-		}*/
 	}
 }
