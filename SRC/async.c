@@ -48,7 +48,7 @@ unsigned char PopFIFO(struct FIFOb *a) {
 }
 
 //Обработчик прерывания от последовательного канала
-void SIO_ISR(void) __interrupt(4) {
+void SIO_ISR(void) __interrupt(8) {
 	unsigned char c;
 	if (TI) {
 		c = PopFIFO(&wFIFO);

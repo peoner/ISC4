@@ -1,4 +1,2 @@
 
-void init_kb(char delay, char freq);
-
-extern unsigned int kb_cols[];
+void init_kb(unsigned char delay, unsigned char freq);

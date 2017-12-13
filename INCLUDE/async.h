@@ -2,7 +2,7 @@
 
 //#define FIFOSize 16
 
-void SIO_ISR( void ) __interrupt ( 4 );
+//void SIO_ISR( void ) __interrupt ( 8 );
 
 #define FIFOSize 16
 

@@ -6,31 +6,31 @@
 #define col_tick 0x01010101
 #define magic_numb 0x40404040
 
-unsigned int kb_cols[4] = {0,0,0,0};
+unsigned long kb_cols[4] = {0,0,0,0};
 
-const unsigned int col_clean[] =
+const unsigned long col_clean[] =
     {0, 0xFF, 0xFF00, 0xFFFF,
     0xFF0000, 0xFF00FF, 0xFFFF00, 0xFFFFFF,
     0xFF000000, 0xFF0000FF, 0xFF00FF00, 0xFF00FFFF,
     0xFFFF0000, 0xFFFF00FF, 0xFFFFFF00, 0xFFFFFFFF};
 
-char table[][] = {"*741", "0852", "#963", "DCBA"};
+char *table[] = {"147*", "2580", "369#", "ABCD"};
 
-volatile unsigned int kb_tick = 0;
+unsigned int kb_tick = 0;
 
-struct FIFOb KB_FIFO;
+volatile struct FIFOb KB_FIFO;
 
-char hold_delay, rep_fr;
+//char hold_delay, rep_fr;
+unsigned char kb_col_row;
 
+void KB_ISR(void) __interrupt(4) {
+    unsigned long buff;
+    unsigned int i, b;
 
-void KB_ISR(void) __interrupt(5) {
-    unsigned int buff, kb_col_row, i, b;
-    int col = kb_tick & 3;
-
-    write_max(KB, ~(1 << col));
+    write_max(KB, ~(1 << (char)(kb_tick & 3)));
     kb_col_row = read_max(KB);
 
-     buff = kb_cols[col];
+     buff = kb_cols[kb_tick & 3];
      buff += col_tick;
      buff &=  col_clean[( ~(kb_col_row >> 4) & 15)];
 
@@ -39,18 +39,19 @@ void KB_ISR(void) __interrupt(5) {
         buff += magic_numb;
         buff &= 0xbfbfbfbf;
     }
-	if(kb_tick > 64*4+4)
+	if(kb_tick > 64*4+3)
 		kb_tick = 0;
 
-    kb_cols[col] = buff;
+    kb_cols[kb_tick & 3] = buff;
 	for(i = 0; i < 4; i++){
-        b = ((buff >> i * 8) & 255);
-        if( b == 5 || b == rep_fr)
+        b = ((buff >> (i * 8)) & 255);
+        if( b == 5 || ( ( (b & 0xC0) != 0) && ( (b & 0x3F) == 0xA)))
             //singl push
-            PushFIFO(&KB_FIFO, table[col][i]);
+            PushFIFO(&KB_FIFO, table[kb_tick & 3][i]);
     }
+    //WriteLED(kb_cols[kb_tick & 3]);
     kb_tick ++;
-	TH0 =  hold_delay;
+	TH0 =  248;
 	TL0 = 0x00;
 }
 
@@ -58,15 +59,15 @@ char ReadKB(){
     return PopFIFO(&KB_FIFO);
 }
 
-void init_kb(char delay, char freq){
+void init_kb(unsigned char delay, unsigned char freq){
 
     TMOD &= 0xF0;
 	TMOD |=	(T0_M0);
 
-    hold_delay = delay;
-    rep_fr = freq;
+    //hold_delay = delay;
+    //rep_fr = freq;
 
-	TH0 = delay;
+	TH0 = 247;
 	TL0 = 0x00;
 
     TR0 = 1;
