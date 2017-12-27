@@ -4,7 +4,7 @@
 #include "async.h"
 
 #define col_tick 0x01010101
-#define magic_numb 0x40404040
+#define magic_numb 0x60606060
 
 unsigned long kb_cols[4] = {0,0,0,0};
 
@@ -20,7 +20,7 @@ unsigned int kb_tick = 0;
 
 volatile struct FIFOb KB_FIFO;
 
-//char hold_delay, rep_fr;
+char hold_delay, rep_fr;
 unsigned char kb_col_row;
 
 void KB_ISR(void) __interrupt(4) {
@@ -34,24 +34,24 @@ void KB_ISR(void) __interrupt(4) {
      buff += col_tick;
      buff &=  col_clean[( ~(kb_col_row >> 4) & 15)];
 
-    if(kb_tick>64*4){
+    if(kb_tick>32*4){
         buff &= 0x7f7f7f7f;     //00->00;01->10;10->00;11->10
         buff += magic_numb;
-        buff &= 0xbfbfbfbf;
+        buff &= 0x9f9f9f9f;
     }
-	if(kb_tick > 64*4+3)
+	if(kb_tick > 32*4+3)
 		kb_tick = 0;
 
     kb_cols[kb_tick & 3] = buff;
 	for(i = 0; i < 4; i++){
         b = ((buff >> (i * 8)) & 255);
-        if( b == 5 || ( ( (b & 0xC0) != 0) && ( (b & 0x3F) == 0xA)))
+        if( b == 5 || ( ( (b & 0xC0) != 0) && ( (b & 0x1F) == 0xA)))
             //singl push
             PushFIFO(&KB_FIFO, table[kb_tick & 3][i]);
     }
     //WriteLED(kb_cols[kb_tick & 3]);
     kb_tick ++;
-	TH0 =  248;
+	TH0 =  hold_delay;
 	TL0 = 0x00;
 }
 
@@ -64,10 +64,10 @@ void init_kb(unsigned char delay, unsigned char freq){
     TMOD &= 0xF0;
 	TMOD |=	(T0_M0);
 
-    //hold_delay = delay;
-    //rep_fr = freq;
+    hold_delay = delay;
+    rep_fr = freq;
 
-	TH0 = 247;
+	TH0 = delay;
 	TL0 = 0x00;
 
     TR0 = 1;
