@@ -22,6 +22,9 @@ volatile struct FIFOb KB_FIFO;
 
 char hold_delay, rep_fr;
 unsigned char kb_col_row;
+volatile unsigned char collis;
+volatile unsigned char collis_old;
+
 
 void KB_ISR(void) __interrupt(4) {
     unsigned long buff;
@@ -43,12 +46,23 @@ void KB_ISR(void) __interrupt(4) {
 		kb_tick = 0;
 
     kb_cols[kb_tick & 3] = buff;
+
+    if((kb_tick & 3) == 0){
+        collis_old = collis;
+        collis = 0;
+    }
 	for(i = 0; i < 4; i++){
         b = ((buff >> (i * 8)) & 255);
-        if( b == 5 || ( ( (b & 0xC0) != 0) && ( (b & 0x1F) == 0xA)))
-            //singl push
-            PushFIFO(&KB_FIFO, table[kb_tick & 3][i]);
+        if(b != 0){
+            collis += 1;
+        }
+        if(collis < 3 && collis_old < 3)
+            if( b == 5 || ( ( (b & 0xC0) != 0) && ( (b & 0x1F) == 0xA))){
+                //singl push
+                PushFIFO(&KB_FIFO, table[kb_tick & 3][i]);
+            }
     }
+
     //WriteLED(kb_cols[kb_tick & 3]);
     kb_tick ++;
 	TH0 =  hold_delay;
